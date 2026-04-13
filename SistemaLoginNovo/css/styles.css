@@ -1,0 +1,166 @@
+@font-face {
+    font-family: tecno;
+    src: url(/css/font/Ethnocentric-Regular.otf);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background: #0a1628;
+    background-image: radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
+        linear-gradient(180deg, #0a1628 0%, #1a1f3a 100%);
+    min-height: 100vh;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+
+
+/* Heroi, começa na linha 11 do html  e termina na 26 */
+.hero { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; padding: 80px 0; }
+.hero-image img { width: 100%; border-radius: 15px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4); }
+.hero h1 { font-size: 4rem; font-weight: 800; margin: 20px 0; letter-spacing: 2px; }
+.hero p { font-size: 1.2rem; color: rgba(255, 255, 255, 0.9); margin: 30px 0; line-height: 1.8; }
+
+
+/* Botão geral, linha 19,70,76 e 111 */
+.btn {
+    display: inline-flex; align-items: center; gap: 10px; padding: 18px 40px;
+    background: #8b5cf6; color: #fff; text-decoration: none; border-radius: 12px;
+    margin: 20px 0; font-weight: 600; transition: 0.3s;
+}
+.btn:hover, .logout:hover, .exit:hover{ background: #7c3aed; transform: translateY(-3px); box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4); }
+.btn::after{ content: '→'; font-size: 1.2rem; }
+
+/* Botao de sair(logout) */
+.logout, .exit{
+   text-decoration: none;
+    border-radius: 5mm;
+    border: none;
+    height: 25px;
+    width: 70px;
+    background-color: #7c3aed;
+    color: #fff;
+    transition: 0.3s;
+}
+
+hr {
+    border: none; height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.4), transparent);
+    margin: 80px auto; max-width: 200px;
+}
+
+
+
+/* Subtitle, linha 29 e 37, textinho*/
+.subtitle { text-align: center; font-size: 1.3rem; margin: 40px 0; color: rgba(255, 255, 255, 0.85); }
+
+
+/* Galeria de imagens linha 28 a 39*/
+.gallery { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin: 50px 0; }
+.thumb { display: block; border-radius: 15px; cursor: pointer; transition: 0.3s; min-height: 150px; background: rgba(139, 92, 246, 0.1); }
+.thumb:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3); }
+.thumb img { width: 100%; border-radius: 10px; display: block; }
+
+
+/* Grid de Cards, linha 43 e 66*/
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin: 60px 0; }
+
+
+
+/* Card na area Beneficios : 44,49 e 54    Card no Conteudo para todos : 66 e 72 */
+.card { text-align: center; padding: 40px 30px; transition: 0.3s; }
+.card:hover { transform: translateY(-5px); }
+.card img { max-width: 120px; margin-bottom: 25px; filter: drop-shadow(0 5px 15px rgba(139, 92, 246, 0.3)); }
+.card:has(.btn) img { max-width: 100%; width: 100%; }
+.card h3 { font-size: 1.6rem; margin: 20px 0; font-weight: 700; }
+.card p { color: rgba(255, 255, 255, 0.8); margin-bottom: 25px; }
+
+
+h1{
+    font-family: tecno;
+}
+h2 { font-size: 3rem; text-align: center; margin: 60px 0; font-weight: 800; text-transform: uppercase; position: relative; }
+h2::after {
+    content: ''; position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%);
+    width: 80px; height: 3px; background: linear-gradient(90deg, transparent, #8b5cf6, transparent);
+}
+
+/* Introdução geral, linha 84 */
+.intro { text-align: center; color: rgba(255, 255, 255, 0.8); max-width: 800px; margin: 30px auto; }
+
+
+
+/* Pacotes de Assinatura, linha 82 a 114 */
+.package {
+    background: rgba(255, 255, 255, 0.03); padding: 50px 40px; border-radius: 20px;
+    text-align: center; transition: 0.3s; border: 1px solid rgba(139, 92, 246, 0.15); position: relative;
+}
+.package::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, transparent, #8b5cf6, transparent); opacity: 0; transition: 0.3s;
+}
+.package:hover { transform: translateY(-5px); border-color: rgba(139, 92, 246, 0.4); background: rgba(255, 255, 255, 0.05); }
+.package:hover::before, .package.featured:hover::before { opacity: 1; }
+.package h3 { font-size: 1.8rem; margin-bottom: 25px; font-weight: 700; }
+.discount { color: #fbbf24; font-weight: 700; margin: 15px 0; text-transform: uppercase; }
+.price { font-size: 3.5rem; font-weight: 800; margin: 25px 0; }
+.package ul { list-style: none; text-align: left; margin-top: 40px; }
+.package li { padding: 15px 0 15px 30px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); position: relative; }
+.package li::before { content: '✓'; position: absolute; left: 0; color: #8b5cf6; font-weight: bold; }
+.package li:last-child { border-bottom: none; }
+
+/*Footer, linha 116 a 140 */
+
+/* Seção de Preços, linha 117 a 129 */
+.social { display: flex; justify-content: center; gap: 25px; margin: 60px 0; }
+.social a {
+    width: 55px; height: 55px; background: rgba(139, 92, 246, 0.15); color: #fff;
+    text-decoration: none; border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; transition: 0.3s; border: 1px solid rgba(139, 92, 246, 0.2);
+}
+.social a:hover { background: rgba(139, 92, 246, 0.3); border-color: #8b5cf6; transform: translateY(-3px); }
+
+/* copyright linha 131  */
+.copyright { text-align: center; color: rgba(255, 255, 255, 0.5); margin: 40px 0; }
+
+/* Modal de Imagem, linha 135 a 140 */
+.modal { display: none; position: fixed; inset: 0; background: rgba(10, 22, 40, 0.98); z-index: 1000; align-items: center; justify-content: center; }
+.modal.active { display: flex; }
+.modal img { max-width: 90%; max-height: 90vh; border-radius: 15px; }
+.close, .prev, .next {
+    position: absolute; color: #fff; font-size: 50px; cursor: pointer;
+    background: rgba(139, 92, 246, 0.3); width: 60px; height: 60px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; transition: 0.3s;
+    border: 2px solid rgba(139, 92, 246, 0.5);
+}
+.close:hover, .prev:hover, .next:hover { background: #8b5cf6; transform: scale(1.1); }
+.close { top: 30px; right: 30px; }
+.prev { left: 30px; }
+.next { right: 30px; }
+
+
+
+/* Media Queries para responsividade pra se adaptar em diferentes telas */
+@media (max-width: 968px) {
+    .hero { grid-template-columns: 1fr; text-align: center; padding: 40px 0; }
+    .hero h1 { font-size: 2.5rem; }
+    .gallery { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    h2 { font-size: 2rem; }
+    .grid { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+    .price { font-size: 2.5rem; }
+}
+@media (max-width: 480px) {
+    .gallery { grid-template-columns: 1fr; }
+    .hero { padding: 20px 0; }
+}
+
+
+/* Suaviza a rolagem dentro da pagina */
+html { scroll-behavior: smooth; }
